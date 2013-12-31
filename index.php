@@ -31,6 +31,13 @@ switch ($endpoint) {
         echo json_encode(['url' => $url]);
         break;
 
+    case 'build_url_compose':
+        $ip = getRealIpAddr();
+        $url = "http://ip-api.com/json/{$ip}?fields=66842623&lang=en";
+        header('Content-Type: application/json');
+        echo json_encode(['url' => $url]);
+        break;
+
     default:
         echo "Welcome; silence is golden";
         break;
